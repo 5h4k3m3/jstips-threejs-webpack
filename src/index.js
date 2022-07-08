@@ -1,10 +1,10 @@
-// import vertexShader from "./shader/vertexShader";
-// import fragmentShader from "./shader/fragmentShader";
+import vertexShader from "./shader/vertexShader.glsl";
+import fragmentShader from "./shader/fragmentShader.glsl";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 // Debug
-// const gui = new dat.GUI();
+//const gui = new dat.GUI();
 
 /**
  * Sizes
@@ -29,11 +29,10 @@ const textureLoader = new THREE.TextureLoader();
 const geometry = new THREE.PlaneGeometry(1, 1, 32, 32);
 
 // Material
-const material = new THREE.MeshBasicMaterial();
-// const material = new THREE.RawShaderMaterial({
-//   vertexShader: vertexShader,
-//   fragmentShader: fragmentShader,
-// });
+const material = new THREE.RawShaderMaterial({
+  vertexShader: vertexShader,
+  fragmentShader: fragmentShader,
+});
 
 // Mesh
 const mesh = new THREE.Mesh(geometry, material);
