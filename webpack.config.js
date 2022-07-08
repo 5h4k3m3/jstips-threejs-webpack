@@ -15,7 +15,7 @@ module.exports = {
         use: "babel-loader",
       },
       {
-        test: /\.(glsl|.vert|.frag)$/,
+        test: /\.(glsl|vert|frag)$/,
         use: "raw-loader",
       },
     ],
